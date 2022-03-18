@@ -1,18 +1,17 @@
 #!/bin/sh
-# Copyright 2019 Deepmind Technologies Limited.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+
+cp -R -u -p /tmp/emnlp2017/input.example/train.json /tmp/emnlp2017/input/
+cp -R -u -p /tmp/emnlp2017/input.example/valid.json /tmp/emnlp2017/input/
+cp -R -u -p /tmp/emnlp2017/input.example/test.json /tmp/emnlp2017/input/
+cp -R -u -p /tmp/emnlp2017/input.example/glove_emnlp2017.txt /tmp/emnlp2017/input/
 
 echo 'Starting training...'
 python3.5 -m scratchgan.experiment --mode="train" &
 python3.5 -m scratchgan.experiment --mode="evaluate_pair" &
+
+until [ -f /tmp/emnlp2017/output/scratchgan-2_sentences.txt ]
+do
+     sleep 5
+done
+echo "File found"
+exit

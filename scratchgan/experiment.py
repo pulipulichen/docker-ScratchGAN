@@ -62,7 +62,7 @@ flags.DEFINE_float("disc_beta1", 0.5, "Beta1 for discriminator.")
 flags.DEFINE_float("gamma", 0.23, "Discount factor.")
 flags.DEFINE_float("baseline_decay", 0.08, "Baseline decay rate.")
 flags.DEFINE_string("mode", "train", "train or evaluate_pair.")
-flags.DEFINE_string("checkpoint_dir", "/tmp/emnlp2017/checkpoints/",
+flags.DEFINE_string("checkpoint_dir", "/tmp/emnlp2017/output/",
                     "Directory for checkpoints.")
 flags.DEFINE_integer("export_every", 1000, "Frequency of checkpoint exports.")
 flags.DEFINE_integer("num_examples_for_eval", int(1e4),
@@ -75,6 +75,8 @@ def main(_):
   config = flags.FLAGS
 
   gfile.makedirs(config.checkpoint_dir)
+  gfile.makedirs(config.output_dir)
+
   if config.mode == "train":
     train(config)
   elif config.mode == "evaluate_pair":
@@ -461,7 +463,7 @@ def evaluate_pair(config, batch_size, checkpoint_path, data_dir, dataset,
       generated_sentences=all_gen_sentences[:num_examples_for_eval],
       real_sentences=all_valid_sentences[:num_examples_for_eval])
 
-  utils.write_eval_results(config.checkpoint_dir, all_gen_sentences,
+  utils.write_eval_results(config.output_dir, all_gen_sentences,
                            os.path.basename(checkpoint_path), mean_train_prob,
                            mean_valid_prob, mean_gen_prob, fid)
 

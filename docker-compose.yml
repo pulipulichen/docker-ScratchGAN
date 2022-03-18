@@ -18,3 +18,11 @@ services:
     #Mount port 1000 on the container side to port 8080 on the host side.
     #ports:
     #  - "8080:8080"
+    command: nvidia-smi
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
