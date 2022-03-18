@@ -1,0 +1,20 @@
+{
+  "name": "docker-scratchgan",
+  "version": "1.0.0",
+  "description": "Run ScratchGAN in Docker",
+  "main": "index.js",
+  "scripts": {
+    "1.build": "docker-compose build",
+    "2.up": "node up.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://pulipuli.chen%40gmail.com@github.com/pulipulichen/docker-ScratchGAN.git"
+  },
+  "author": "Pulipuli Chen <pulipuli.chen@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/pulipulichen/docker-ScratchGAN/issues"
+  },
+  "homepage": "https://github.com/pulipulichen/docker-ScratchGAN#readme"
+}
