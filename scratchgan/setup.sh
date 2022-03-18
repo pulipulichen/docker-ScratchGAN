@@ -14,14 +14,6 @@
 # limitations under the License.
 
 
-# Get EMNLP data.
-mkdir -p /tmp/emnlp2017
-curl https://storage.googleapis.com/deepmind-scratchgan-data/train.json --output /tmp/emnlp2017/input.example/train.json
-curl https://storage.googleapis.com/deepmind-scratchgan-data/valid.json --output /tmp/emnlp2017/input.example/valid.json
-curl https://storage.googleapis.com/deepmind-scratchgan-data/test.json --output /tmp/emnlp2017/input.example/test.json
-curl https://storage.googleapis.com/deepmind-scratchgan-data/glove_emnlp2017.txt --output /tmp/emnlp2017/input.example/glove_emnlp2017.txt
-
-
 # Install python3.5
 which python3.5
 if  [ $? -eq 1 ]; then
@@ -39,10 +31,10 @@ set -e
 python3.5 -m venv scratchgan-venv
 echo 'Created venv'
 source scratchgan-venv/bin/activate
-echo 'Installing pip'
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python3.5 get-pip.py pip==20.2.3
 
+#echo 'Installing pip'
+#curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+#python3.5 get-pip.py pip==20.2.3
 
 echo 'Getting requirements.'
-pip install -r scratchgan/requirements.txt
+#pip install -r /tmp/emnlp2017/scratchgan/requirements.txt

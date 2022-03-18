@@ -11,9 +11,10 @@ services:
     tty: true
     #Mount the files in the directory to the app directory in the container
     volumes: 
-      - ./input:/app/input
-      - ./input.example:/app/input.example
-      - ./output:/app/output
+      - ./input:/tmp/emnlp2017/input
+      - ./input.example:/tmp/emnlp2017/input.example
+      - ./output:/tmp/emnlp2017/output
+      - ./checkpoints:/tmp/emnlp2017/checkpoints
     #Mount port 1000 on the container side to port 8080 on the host side.
     #ports:
     #  - "8080:8080"
