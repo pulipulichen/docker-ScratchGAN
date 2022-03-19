@@ -15,14 +15,15 @@ services:
       - ./input.example:/tmp/emnlp2017/input.example
       - ./output:/tmp/emnlp2017/output
       - ./checkpoints:/tmp/emnlp2017/checkpoints
+      - ./scratchgan/:/tmp/emnlp2017/scratchgan
     #Mount port 1000 on the container side to port 8080 on the host side.
     #ports:
     #  - "8080:8080"
-    command: nvidia-smi
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: 1
-              capabilities: [gpu]
+    #command: nvidia-smi
+    #deploy:
+    #  resources:
+    #    reservations:
+    #      devices:
+    #        - driver: nvidia
+    #          count: 1
+    #          capabilities: [gpu]

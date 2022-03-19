@@ -31,7 +31,7 @@ def fid(generated_sentences, real_sentences):
   Returns:
     Frechet distance between activations.
   """
-  embed = hub.Module("https://tfhub.dev/google/universal-sentence-encoder-multilingual/3")
+  embed = hub.load("https://tfhub.dev/google/universal-sentence-encoder-multilingual/3")
   real_embed = embed(real_sentences)
   generated_embed = embed(generated_sentences)
   distance = tfgan.eval.frechet_classifier_distance_from_activations(
