@@ -8,10 +8,3 @@ cp -R -u -p /tmp/emnlp2017/input.example/glove_emnlp2017.txt /tmp/emnlp2017/inpu
 echo 'Starting training...'
 python3.5 -m scratchgan.experiment --mode="train" &
 python3.5 -m scratchgan.experiment --mode="evaluate_pair" &
-
-until [ -f /tmp/emnlp2017/output/scratchgan-2_sentences.txt ]
-do
-     sleep 5
-done
-echo "File found"
-exit
