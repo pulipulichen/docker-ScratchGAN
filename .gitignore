@@ -2,3 +2,4 @@
 /checkpoints/*
 /input/*
 /output/*
+/scratchgan/__pycache__

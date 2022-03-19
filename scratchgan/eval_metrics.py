@@ -19,7 +19,8 @@ from __future__ import print_function
 import tensorflow.compat.v1 as tf
 import tensorflow_gan as tfgan
 import tensorflow_hub as hub
-
+import numpy as np
+import tensorflow_text
 
 def fid(generated_sentences, real_sentences):
   """Compute FID rn sentences using pretrained universal sentence encoder.

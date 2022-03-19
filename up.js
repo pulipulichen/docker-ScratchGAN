@@ -31,7 +31,7 @@ const { spawn } = require("child_process");
 const cmd = spawn("docker-compose", ["up"]);
 
 cmd.stdout.on("data", data => {
-    console.log(`stdout: ${data}`);
+    console.log(`${data}`);
 });
 
 cmd.stderr.on("data", data => {
