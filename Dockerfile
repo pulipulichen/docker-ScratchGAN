@@ -8,6 +8,7 @@ RUN echo 'Getting requirements.'
 RUN /usr/local/bin/python -m pip install --upgrade pip
 RUN pip install absl-py==0.7.1
 RUN pip install numpy==1.16.4
+
 RUN pip install tensorflow==1.15
 RUN pip install tensorflow-probability==0.7.0
 RUN pip install tensorflow-gan==1.0.0.dev0
@@ -15,7 +16,17 @@ RUN pip install tensorflow-hub==0.6.0
 RUN pip install tensorflow-io==0.8.0
 RUN pip install tensorflow-gpu==1.15
 RUN pip install dm-sonnet==1.34
-RUN pip install tensorflow-text==2.3.0 
+#RUN pip install tensorflow-text==2.3.0 
+
+#RUN pip install tensorflow-text==2.3.0 
+#RUN pip install tensorflow-gpu==1.15
+#RUN pip install tensorflow-probability==0.7.0
+#RUN pip install tensorflow-gan==1.0.0.dev0
+#RUN pip install tensorflow-hub==0.6.0
+#RUN pip install tensorflow-io==0.8.0
+
+#RUN pip install dm-sonnet==1.34
+#RUN pip install tensorflow
 
 # ====================
 RUN useradd -m user
@@ -33,7 +44,7 @@ RUN mkdir -p /tmp/emnlp2017/output
 RUN mkdir -p /tmp/emnlp2017/scratchgan
 
 COPY ./scratchgan /tmp/emnlp2017/scratchgan
-RUN python /tmp/emnlp2017/scratchgan/load_hub_model.py
+#RUN python /tmp/emnlp2017/scratchgan/load_hub_model.py
 
 # =================================
 RUN echo 'Created venv'

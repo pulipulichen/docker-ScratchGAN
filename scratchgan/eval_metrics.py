@@ -19,8 +19,8 @@ from __future__ import print_function
 import tensorflow.compat.v1 as tf
 import tensorflow_gan as tfgan
 import tensorflow_hub as hub
-import numpy as np
-import tensorflow_text
+#import numpy as np
+#import tensorflow_text
 
 def fid(generated_sentences, real_sentences):
   """Compute FID rn sentences using pretrained universal sentence encoder.
@@ -32,7 +32,8 @@ def fid(generated_sentences, real_sentences):
   Returns:
     Frechet distance between activations.
   """
-  embed = hub.load("https://tfhub.dev/google/universal-sentence-encoder-multilingual/3")
+  embed = hub.Module("https://tfhub.dev/google/universal-sentence-encoder/2")
+  #embed = hub.load("https://tfhub.dev/google/universal-sentence-encoder-multilingual/3")
   real_embed = embed(real_sentences)
   generated_embed = embed(generated_sentences)
   distance = tfgan.eval.frechet_classifier_distance_from_activations(
