@@ -10,7 +10,7 @@ Run ScratchGAN in Docker
 5. Run `bash scratchgan/train.sh`
 6. Wait for training and evaluating.
 7. The first training result will disappear in `./checkpoints/scratchgan-2002_sentences.txt`
-8. Keep waiting for `scratchgan-4002_sentences.txt` and `scratchgan-6002_sentences.txt`
+8. Keep waiting for `scratchgan-4002_sentences.txt` and `scratchgan-6002_sentences.txt`. It takes at least three hours to perform each iteration.
 
 # Result
 
