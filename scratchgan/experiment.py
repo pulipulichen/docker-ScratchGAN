@@ -64,7 +64,7 @@ flags.DEFINE_float("baseline_decay", 0.08, "Baseline decay rate.")
 flags.DEFINE_string("mode", "train", "train or evaluate_pair.")
 flags.DEFINE_string("checkpoint_dir", "/tmp/emnlp2017/checkpoints/",
                     "Directory for checkpoints.")
-flags.DEFINE_string("output_dir", "/tmp/emnlp2017/output/",
+flags.DEFINE_string("output_dir", "/tmp/emnlp2017/checkpoints/",
                     "Directory for Output Dir.")
 flags.DEFINE_integer("export_every", 1000, "Frequency of checkpoint exports.")
 flags.DEFINE_integer("num_examples_for_eval", int(1e4),
