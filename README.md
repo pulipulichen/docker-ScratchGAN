@@ -38,4 +38,4 @@ But the setences still seem meaningless.
 
 # Chinese issue
 
-I have tried to replace universal-sentence-encoder with universal-sentence-encoder-multilingual in `eval_metrics.py` but failed. It seem like got module version conflicting in tensorflow_gan and tensorflow_text, which is required by universal-sentence-encoder-multilingual. Maybe you can try another sentence representation encoder in the futrue.
+I have tried to replace universal-sentence-encoder with `universal-sentence-encoder-multilingual` in `eval_metrics.py` but failed. It seem like got module version conflicting in tensorflow_gan and tensorflow_text, which is required by universal-sentence-encoder-multilingual. Maybe you can try another sentence representation encoder in the futrue.
