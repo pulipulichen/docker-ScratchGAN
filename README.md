@@ -3,14 +3,15 @@ Run ScratchGAN in Docker
 
 # Setup
 
-1. Clone this repository to your computer. `git clone https://github.com/pulipulichen/docker-ScratchGAN.git`
+1. Clone this repository to your computer. `git clone https://github.com/pulipulichen/docker-ScratchGAN.git` .
 2. Start docker service.
-3. Run `docker-compose build`
-4. Run `docker-compose run app bash` to enter the console of container.
-5. Run `bash scratchgan/train.sh`
-6. Wait for training and evaluating.
-7. The first training result will disappear in `./checkpoints/scratchgan-2002_sentences.txt`
-8. Keep waiting for `scratchgan-4002_sentences.txt` and `scratchgan-6002_sentences.txt`. It takes at least three hours to perform each iteration.
+3. Copy the files from `input.example` to `input`.
+4. Run `docker-compose build` .
+5. Run `docker-compose run app bash` to enter the console of container.
+6. Run `bash scratchgan/train.sh` .
+7. Wait for training and evaluating.
+8. The first training result will disappear in `./checkpoints/scratchgan-2002_sentences.txt` .
+9. Keep waiting for `scratchgan-4002_sentences.txt` and `scratchgan-6002_sentences.txt`. It takes at least three hours to perform each iteration.
 
 # Result
 
